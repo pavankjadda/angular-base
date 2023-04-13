@@ -26,19 +26,11 @@
 </div>
 
 <div class="content" role="main">
-    <h2>Employees</h2>
-    <div *ngFor="let employee of employees">
-        <app-employee-list [employee]="employee"/>
-    </div>
+    <!-- Main -->
+    <main class="content">
+        <router-outlet></router-outlet>
+    </main>
 
 </div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
