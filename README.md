@@ -8,7 +8,8 @@ configurations to start a new project.
 3. Signals
 4. Prettier
 5. Eslint
-6. Playwright (e2e testing)
+6. Jest (unit testing)
+7. Playwright (e2e testing)
 
 ## Development server
 
