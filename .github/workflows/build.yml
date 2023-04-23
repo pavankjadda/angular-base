@@ -22,6 +22,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run e2e tests
-        run: pnpm start && pnpm pw:run
+        run: pnpm pw:run
       - name: Build the app
         run: pnpm build
