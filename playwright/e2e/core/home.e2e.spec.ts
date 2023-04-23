@@ -9,7 +9,7 @@ test.describe('Home', () => {
 		await expect(page).toHaveTitle('Angular V16 Base');
 	});
 
-	test('should show title Angular V16 Base', async ({ page }) => {
+	test('should show label Employees', async ({ page }) => {
 		await expect(page.getByText('Employees')).toBeVisible();
 	});
 });
