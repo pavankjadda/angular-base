@@ -11,6 +11,7 @@ configurations to start a new project.
 6. Jest (unit testing)
 7. Playwright (e2e testing)
 
+By default, new component or directive generates standalone version with inline template and styles. And tests are skipped.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
