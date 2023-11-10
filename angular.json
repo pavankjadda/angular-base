@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-v16-base": {
+    "angular-base": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,11 +40,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-v16-base",
+            "outputPath": "dist/angular-base",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -76,12 +76,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -90,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-v16-base:build:production"
+              "buildTarget": "angular-base:build:production"
             },
             "development": {
-              "buildTarget": "angular-v16-base:build:development"
+              "buildTarget": "angular-base:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-v16-base:build"
+            "buildTarget": "angular-base:build"
           }
         },
         "test": {
