@@ -41,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "7.10.0",
     "@typescript-eslint/parser": "7.10.0",
     "eslint": "^8.53.0",
+    "glob": "latest",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "3.2.5",
