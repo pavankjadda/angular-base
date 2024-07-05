@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ubuntu-latest-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ubuntu-latest-build-${{ env.cache-name }}-
+            ubuntu-latest-build-
+            ubuntu-latest-
+
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm i --legacy-peer-deps
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Semantic release
+        run: npx semantic-release
+
+      - name: Update version in source code
+        run: |
+          latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          version=${latest_tag#v}
+          bash release.sh $version
+
