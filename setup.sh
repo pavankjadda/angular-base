@@ -26,4 +26,5 @@ done
 # Rename the angular-base directory to the project name
 cd ..
 mv angular-base "$projectName"
+rm -rf angular-base
 cd "$projectName" || exit
