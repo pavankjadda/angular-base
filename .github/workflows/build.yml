@@ -12,16 +12,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile && npx playwright install
+        run: npm install --frozen-lockfile && npx playwright install
       - name: Run e2e tests
-        run: pnpm pw:run
+        run: npm run pw:run
       - name: Build the app
-        run: pnpm build
+        run: npm run build
