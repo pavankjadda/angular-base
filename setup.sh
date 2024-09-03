@@ -6,6 +6,7 @@ read -r -p "What's the project name in lower case with no spaces? " projectName
 # Define the directory to search in and the directories to exclude
 searchDir="."
 excludeDirs=(.angular node_modules)
+currentDir=$(pwd)
 
 # Construct the find command excluding specified directories
 findCommand="find $searchDir"
@@ -26,5 +27,7 @@ done
 # Rename the angular-base directory to the project name
 cd ..
 mv angular-base "$projectName"
-rm -rf angular-base
 cd "$projectName" || exit
+
+# Remove the angular-base directory
+rm -rf $currentDir
