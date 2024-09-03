@@ -27,3 +27,6 @@ done
 cd ..
 mv angular-base "$projectName"
 cd "$projectName" || exit
+
+# Install the project dependencies
+npm i && npm audit fix
