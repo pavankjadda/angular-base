@@ -20,7 +20,7 @@ By default, new component or directive generates standalone version with inline 
   ```
 2. Run script and enter the desired project name
   ````shell
-  bash setup.sh
+  . setup.sh
   ````
 3. Run `npm run start` to start the development server and navigate to `http://localhost:4200`
 4. Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
