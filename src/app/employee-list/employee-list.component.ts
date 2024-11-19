@@ -6,17 +6,16 @@ import { Employee } from '../types/Employee';
 import { ViewEmployeeComponent } from '../view-employee/view-employee.component';
 
 @Component({
-	selector: 'app-employee-list',
-	standalone: true,
-	imports: [CommonModule, ViewEmployeeComponent, RouterLink, RouterOutlet],
-	template: `
+    selector: 'app-employee-list',
+    imports: [CommonModule, ViewEmployeeComponent, RouterLink, RouterOutlet],
+    template: `
 		<h2>Employees</h2>
 		<div *ngFor="let employee of employees()">
 			<app-view-employee [employee]="employee" />
 		</div>
 		<button routerLink="/employee/new">Create New</button>
 	`,
-	styles: [],
+    styles: []
 })
 export class EmployeeListComponent implements OnInit {
 	employeeService = inject(EmployeeService);
