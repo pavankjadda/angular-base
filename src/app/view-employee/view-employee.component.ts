@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { Employee } from '../types/Employee';
 
 @Component({
     selector: 'app-view-employee',
-    imports: [CommonModule],
+    imports: [],
     template: `
 		<p>First Name: {{ employee?.firstName }}</p>
 		<p>Last Name: {{ employee?.lastName }}</p>
